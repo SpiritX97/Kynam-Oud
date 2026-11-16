@@ -35,11 +35,20 @@
     .nav-links a:hover, .nav-links a:focus-visible { color: var(--gold-light); }
 
     .hero {
-      position: relative; display: grid; min-height: 100svh; place-items: center; overflow: hidden;
-      padding: 120px 24px 80px; text-align: center;
-      background: linear-gradient(90deg, rgba(0,0,0,.78), rgba(0,0,0,.38), rgba(0,0,0,.78)),
-        linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.55)),
-        url("Logo.jpg") center / cover no-repeat;
+      position: relative; display: grid; place-items: center;
+      min-height: 100svh; padding: 110px 24px 40px;
+      background: #060606;
+      overflow: hidden;
+    }
+    .hero-logo-wrap {
+      display: flex; align-items: center; justify-content: center;
+      width: min(100%, 1200px); height: min(80vh, 900px);
+      padding: 24px;
+    }
+    .hero-logo {
+      display: block; width: 100%; height: 100%; object-fit: contain;
+      filter: drop-shadow(0 8px 32px rgba(212,175,55,0.25));
+      animation: rise-in .8s ease-out both;
     }
     .hero-content { max-width: 800px; animation: rise-in .8s ease-out both; }
     .eyebrow { margin-bottom: 14px; color: var(--gold-light); font-size: .8rem; font-weight: 700; letter-spacing: .25em; text-transform: uppercase; }
@@ -78,6 +87,8 @@
       .section { padding: 68px 6%; }
       .products, .features { grid-template-columns: 1fr; }
       .card img { height: 250px; }
+      .hero { padding-top: 110px; }
+      .hero-logo-wrap { height: min(65vh, 560px); }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
@@ -97,14 +108,12 @@
     </nav>
   </header>
   <main>
-    <section class="hero" id="home" aria-labelledby="hero-title">
-      <div class="hero-content">
-        <p class="eyebrow">A tradition of distinction</p>
-        <h1 id="hero-title">Kynam Oud</h1>
-        <p>Authentic Saudi oud wood, carefully selected for its exceptional character and rich, lasting aroma.</p>
-        <a class="button" href="#products">Explore the Collection</a>
+    <section class="hero" id="home" aria-label="Kynam Oud brand logo">
+      <div class="hero-logo-wrap">
+        <img class="hero-logo" src="Logo.jpg" alt="Kynam Oud logo" loading="eager">
       </div>
     </section>
+
     <section class="section" id="about" aria-labelledby="about-title">
       <h2 class="section-title" id="about-title">Our Story</h2>
       <p class="about-copy">Kynam Oud celebrates the timeless heritage of natural oud wood. We carefully select premium oud for its distinctive character, craftsmanship, and unforgettable fragrance, bringing a treasured Arabian tradition to oud lovers across Saudi Arabia.</p>
